@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kirbypunch.png-3240c7ff5a3749167c3cb7df700e8b46.stex"
+path="res://.import/magossSSS-4.png.png-fcd5322aa8b4cc316dec89b5b0f26b16.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/kirby/kirbypunch.png"
-dest_files=[ "res://.import/kirbypunch.png-3240c7ff5a3749167c3cb7df700e8b46.stex" ]
+source_file="res://Assets/Sprites/P2Mago/magossSSS-4.png.png"
+dest_files=[ "res://.import/magossSSS-4.png.png-fcd5322aa8b4cc316dec89b5b0f26b16.stex" ]
 
 [params]
 

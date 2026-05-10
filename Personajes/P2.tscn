@@ -1,13 +1,22 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Assets/Sprites/threeformsPrev.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-3.png.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-5.png.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-1.png.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-2.png.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-4.png.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -28,7 +37,7 @@ extents = Vector2( 30, 10 )
 position = Vector2( 182, -290 )
 scale = Vector2( 1.49, 1.45 )
 frames = SubResource( 1 )
-animation = "Idle"
+animation = "attack"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 185.5, -301 )
