@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Sprites/threeformsPrev.png" type="Texture" id=1]
 
@@ -6,7 +6,7 @@
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "default",
+"name": "Idle",
 "speed": 1.0
 } ]
 
@@ -19,12 +19,16 @@ extents = Vector2( 41.5, 14 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 38.25, 18.5 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 30, 10 )
+
 [node name="P2" type="KinematicBody2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 182, -290 )
 scale = Vector2( 1.49, 1.45 )
 frames = SubResource( 1 )
+animation = "Idle"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 185.5, -301 )
@@ -37,3 +41,12 @@ shape = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 185, -239.5 )
 shape = SubResource( 4 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 142, -284 )
+shape = SubResource( 5 )
+disabled = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
