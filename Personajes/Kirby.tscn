@@ -18,8 +18,8 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 53, 45.75 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 55, 50 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 29, 19.5 )
@@ -34,8 +34,8 @@ frames = SubResource( 1 )
 animation = "attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -41, -53.75 )
-shape = SubResource( 2 )
+position = Vector2( -39, -53 )
+shape = SubResource( 4 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 
