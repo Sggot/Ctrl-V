@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Ctrl+V"
-run/main_scene="res://Personajes/Kirby.tscn"
+run/main_scene="res://Escenas/Inicio2D.tscn"
 config/icon="res://icon.png"
 
 [display]
