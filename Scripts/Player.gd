@@ -45,7 +45,7 @@ func _physics_process(delta):
 	# ---- Teclas de movimiento según jugador ----
 	var left  = "p1_left"  if player_id == 1 else "p2_left"
 	var right = "p1_right" if player_id == 1 else "p2_right"
-	var jump  = "p1_up"    if player_id == 1 else "p2_up"
+	var jump  = "p1_jump"    if player_id == 1 else "p2_jump"
 
 	# ---- Movimiento horizontal ----
 	if Input.is_action_pressed(right):
