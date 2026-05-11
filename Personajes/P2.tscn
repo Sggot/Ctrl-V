@@ -50,5 +50,3 @@ disabled = true
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
-
-[connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]
