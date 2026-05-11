@@ -52,15 +52,16 @@ func _physics_process(delta):
 		velocity.x = speed
 	if Input.is_action_pressed(left):
 		velocity.x = -speed
+		
+	
+	# ---- Animación de movimiento ----
+	fuck()
+	
 
 	# ---- Salto ----
 	if is_on_floor() and Input.is_action_just_pressed(jump):
 		velocity.y = jump_force
 
-	# ---- Idle cuando no está atacando ----
-	if not is_attacking and $CooldownTimer.is_stopped():
-		if $AnimatedSprite.animation != "Idle":
-			$AnimatedSprite.play("Idle")
 
 	# ---- Ataque ----
 	_attack()
@@ -94,3 +95,15 @@ func take_damage(amount):
 	emit_signal("hp_changed", hp)
 	if hp <= 0:
 		emit_signal("player_died")
+
+func fuck():
+	if not is_attacking:
+		if velocity.x > 0:
+			if $AnimatedSprite.animation != "walk":
+				$AnimatedSprite.play("walk")
+		elif velocity.x < 0:
+			if $AnimatedSprite.animation != "walk1":
+				$AnimatedSprite.play("walk1")
+		else:
+			if $AnimatedSprite.animation != "Idle":
+				$AnimatedSprite.play("Idle")
