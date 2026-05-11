@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-3.png.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-5.png.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-2.png.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-4.png.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Sprites/threeformsPrev.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -17,6 +18,16 @@ animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "walk1",
 "speed": 5.0
 } ]
 
@@ -34,7 +45,7 @@ player_id = 2
 position = Vector2( 832, 359 )
 scale = Vector2( 5.05848, 4.60448 )
 frames = SubResource( 1 )
-animation = "attack"
+animation = "walk1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 810.875, 360 )
