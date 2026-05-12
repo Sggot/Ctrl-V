@@ -1,63 +1,111 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=34 format=2]
 
-[ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-3.png.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-5.png.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-1.png.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-2.png.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/P2Mago/magossSSS-4.png.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote 2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote 1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote Idle 1.png-1.png.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote Idle In the Mirror 1.png-1.png.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote in the mirror 7.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Sprites/threeformsPrev.png" type="Texture" id=7]
-[ext_resource path="res://Assets/ferWawa.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote in the mirror 8.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote M1 in the mirror.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby megrote 3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote M1 in the mirror 2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote Salto in the mirror.png.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote 5.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote M1 3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote M1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote in the mirror 3.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote 4.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote M1 2.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote 6.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote in the mirror 1.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote salto.png.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote 7.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote 8.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote in the mirror 5.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote M1 4.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote In the mirror m1 3.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby Negrote in the mirror 6.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote in the mirror 2.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote in the mirror 4.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Sprites/Kirby Negrotote/Kirby negrote M1 in the mirror 4.png" type="Texture" id=29]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": false,
-"name": "Idle",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "attack",
+"name": "IdleL",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "IdleR",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 24 ) ],
+"loop": false,
+"name": "attack",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 25 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "attack1",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "jump1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "walk",
-"speed": 8.0
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 27 ), ExtResource( 15 ), ExtResource( 28 ), ExtResource( 23 ), ExtResource( 26 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "walk1",
-"speed": 8.0
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 46.125, 49.75 )
+extents = Vector2( 48.125, 44.375 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 56.5, 15 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 32, 11 )
 
 [node name="P2" type="KinematicBody2D"]
 script = ExtResource( 6 )
 player_id = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 817, 353 )
-scale = Vector2( 0.485093, 0.17932 )
+position = Vector2( 824, 341 )
+scale = Vector2( 3.69345, 3.23335 )
 frames = SubResource( 1 )
-animation = "walk1"
+animation = "IdleL"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 810.875, 360 )
+position = Vector2( 829, 346 )
 shape = SubResource( 2 )
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 915.5, 353 )
+position = Vector2( 923.5, 339 )
 shape = SubResource( 5 )
 disabled = true
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 744, 347 )
+shape = SubResource( 6 )
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.5

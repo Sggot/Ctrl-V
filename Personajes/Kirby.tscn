@@ -1,9 +1,9 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Assets/Sprites/kirby/New Piskel-1.png.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Sprites/kirby/kirbypunch1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/kirby/kirbypunch2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/kirby/Kirby M1 in the mirror 4.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/kirby/Kirby M1 1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/kirby/Kirby Walk 2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/kirby/Kirby Walk 4.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/kirby/Kirby Walk 5.png" type="Texture" id=7]
@@ -20,6 +20,14 @@
 [ext_resource path="res://Assets/Sprites/kirby/Kirby in the mirror 5.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Sprites/kirby/kirby in the mirror 2.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Sprites/kirby/kirby in the mirror 4.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sprites/kirby/Kirby M1 2.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Sprites/kirby/Kirby M1 3.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Sprites/kirby/Kirby M1 4.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Sprites/kirby/Kirby M1 in the mirror 3.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Sprites/kirby/Kirby M1 in the mirror.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Sprites/kirby/Kirby M1 in the mirror 2.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Sprites/kirby/Kirby Salto In the mirror.png (1).png" type="Texture" id=27]
+[ext_resource path="res://Assets/Sprites/kirby/Kirby Salto.png.png" type="Texture" id=28]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -33,10 +41,25 @@ animations = [ {
 "name": "IdleR",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
+"frames": [ ExtResource( 4 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": false,
 "name": "attack",
-"speed": 10.0
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "attack1",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "jump1",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
@@ -55,14 +78,17 @@ extents = Vector2( 55, 50 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 29, 19.5 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32.75, 18.5 )
+
 [node name="Kirby" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -30, -59.5 )
+position = Vector2( -34, -26 )
 scale = Vector2( 4.3125, 3.53125 )
 frames = SubResource( 1 )
-animation = "IdleL"
+animation = "jump1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -39, -53 )
@@ -73,6 +99,10 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 21, -48.5 )
 shape = SubResource( 3 )
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -120.25, -46 )
+shape = SubResource( 5 )
 
 [node name="CooldownTimer" type="Timer" parent="."]
 one_shot = true

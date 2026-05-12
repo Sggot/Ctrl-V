@@ -1,7 +1,6 @@
 class_name Player
 extends KinematicBody2D
 
-# ---- Exportables (editables desde el inspector) ----
 export var gravity = 1500
 export var speed = 400
 export var jump_force = -600
@@ -10,91 +9,100 @@ export var hp = 100
 export var attack_damage = 10
 export var attack_cooldown = 0.5
 
-# ---- Señales ----
 signal hp_changed(new_hp)
 signal player_died
 
-# ---- Variables internas ----
 var velocity : Vector2 = Vector2.ZERO
 var attack_key : String
 var is_attacking : bool = false
-var lol = 1  # 1 = mirando derecha, 0 = mirando izquierda
-
-onready var collision_shape_2d = $Hitbox/CollisionShape2D
+export var direction = 1 # 1 para Derecha, 0 para Izquierda (antes llamado lol)
 
 func _ready():
 	attack_key = "p1_attack" if player_id == 1 else "p2_attack"
-	collision_shape_2d.disabled = true
+	$Hitbox/CollisionShape2D.disabled = true
+	$Hitbox/CollisionShape2D1.disabled = true
 	$Hitbox.connect("body_entered", self, "_on_Hitbox_body_entered")
 	$AnimatedSprite.connect("animation_finished", self, "_on_animation_finished")
 	$AnimatedSprite.play("IdleR")
 
 func _physics_process(delta):
-	# ---- Teclas según jugador ----
 	var left  = "p1_left"  if player_id == 1 else "p2_left"
 	var right = "p1_right" if player_id == 1 else "p2_right"
 	var jump  = "p1_up"    if player_id == 1 else "p2_up"
 
-	# ---- Gravedad ----
+	# Aplicar gravedad siempre
 	velocity.y += gravity * delta
+	
+	# Reiniciar velocidad horizontal
 	velocity.x = 0
 
-	# ---- Movimiento horizontal ----
-	if Input.is_action_pressed(right):
-		velocity.x = speed
-		lol = 1
-	if Input.is_action_pressed(left):
-		velocity.x = -speed
-		lol = 0
+	# MOVIMIENTO: Solo si no estamos atacando
+	if not is_attacking:
+		if Input.is_action_pressed(right):
+			velocity.x = speed
+			direction = 1
+		elif Input.is_action_pressed(left):
+			velocity.x = -speed
+			direction = 0
 
-	# ---- Animaciones ----
-	fuck()
+		if is_on_floor() and Input.is_action_just_pressed(jump):
+			velocity.y = jump_force
 
-	# ---- Salto ----
-	if is_on_floor() and Input.is_action_just_pressed(jump):
-		velocity.y = jump_force
-
-	# ---- Ataque ----
+	# SISTEMA DE ATAQUE
 	_attack()
 
-	# ---- Aplicar movimiento ----
-	velocity = move_and_slide(velocity, Vector2.UP)
-	
-	
-func fuck():
+	# GESTIÓN DE ANIMACIONES: Solo si no está atacando (para no interrumpir el ataque)
 	if not is_attacking:
-		if velocity.x > 0:
-			$AnimatedSprite.flip_h = false
-			if $AnimatedSprite.animation != "walk":
-				$AnimatedSprite.play("walk")
-		elif velocity.x < 0:
-				$AnimatedSprite.flip_h = false
-				if $AnimatedSprite.animation != "walk1":
-					$AnimatedSprite.play("walk1")
+		_update_animations()
+
+	# Aplicar movimiento
+	velocity = move_and_slide(velocity, Vector2.UP)
+
+func _update_animations():
+	if not is_on_floor():
+		if direction == 1:
+			if $AnimatedSprite.animation != "jump":
+				$AnimatedSprite.play("jump")
 		else:
-			if lol == 1:
-				$AnimatedSprite.flip_h = false
-				if $AnimatedSprite.animation != "IdleR":
-					$AnimatedSprite.play("IdleR")
-			else:
-				$AnimatedSprite.flip_h = true
-				if $AnimatedSprite.animation != "IdleL":
-					$AnimatedSprite.play("IdleL")
-					
-					
+			if $AnimatedSprite.animation != "jump1":
+				$AnimatedSprite.play("jump1")
+	elif velocity.x > 0:
+		if $AnimatedSprite.animation != "walk":
+			$AnimatedSprite.play("walk")
+	elif velocity.x < 0:
+		if $AnimatedSprite.animation != "walk1":
+			$AnimatedSprite.play("walk1")
+	else:
+		# IDLE: Aquí se corrige que se quede mirando a la izquierda
+		if direction == 1:
+			if $AnimatedSprite.animation != "IdleR":
+				$AnimatedSprite.play("IdleR")
+		else:
+			if $AnimatedSprite.animation != "IdleL":
+				$AnimatedSprite.play("IdleL")
+
 func _attack():
+	# Solo atacar si no está atacando ya y el cooldown terminó
 	if Input.is_action_just_pressed(attack_key) and not is_attacking and $CooldownTimer.is_stopped():
 		is_attacking = true
-		collision_shape_2d.disabled = false
-		$AnimatedSprite.play("attack")
+		
+		if direction == 1:
+			$Hitbox/CollisionShape2D.disabled = false
+			$AnimatedSprite.play("attack")
+		else:
+			$Hitbox/CollisionShape2D1.disabled = false
+			$AnimatedSprite.play("attack1")
 
 func _on_animation_finished():
-	if $AnimatedSprite.animation == "attack":
-		collision_shape_2d.disabled = true
+	# Solo resetear si terminó una animación de ataque
+	if $AnimatedSprite.animation == "attack" or $AnimatedSprite.animation == "attack1":
+		$Hitbox/CollisionShape2D.disabled = true
+		$Hitbox/CollisionShape2D1.disabled = true
 		$CooldownTimer.start(attack_cooldown)
 		is_attacking = false
-		# Volver al idle correcto según dirección
-		if lol == 1:
+		
+		# Después de atacar, volver al Idle correspondiente inmediatamente
+		if direction == 1:
 			$AnimatedSprite.play("IdleR")
 		else:
 			$AnimatedSprite.play("IdleL")
