@@ -58,6 +58,8 @@ func _on_p2_hp_changed(new_hp):
 	barra_p2.value = new_hp
 
 #mi codigo por si corrompe todo :v
+
+#daquem lol causas
 	match new_hp:
 		
 		100:$HUD/BarraP2.frame=1
