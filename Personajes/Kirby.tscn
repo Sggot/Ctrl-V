@@ -25,7 +25,12 @@
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "Idle",
+"name": "IdleL",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "IdleR",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
@@ -57,7 +62,7 @@ script = ExtResource( 2 )
 position = Vector2( -30, -59.5 )
 scale = Vector2( 4.3125, 3.53125 )
 frames = SubResource( 1 )
-animation = "walk1"
+animation = "IdleL"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -39, -53 )
