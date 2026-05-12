@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Personajes/P2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Personajes/Kirby.tscn" type="PackedScene" id=2]
@@ -30,6 +30,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -4, 216 )
+b = Vector2( -3, -236 )
 
 [node name="Main" type="Node2D"]
 position = Vector2( 622, 387 )
@@ -88,3 +92,24 @@ animation = "New Anim"
 
 [node name="PantallaVictoria" parent="." instance=ExtResource( 5 )]
 visible = false
+
+[node name="pared" type="Node2D" parent="."]
+position = Vector2( -349, -246 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="pared"]
+position = Vector2( -244, 107 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared/StaticBody2D"]
+position = Vector2( -26, 3 )
+shape = SubResource( 2 )
+one_way_collision = true
+one_way_collision_margin = 0.0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="pared"]
+position = Vector2( -244, 107 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared/StaticBody2D2"]
+position = Vector2( 1254, 9 )
+shape = SubResource( 2 )
+one_way_collision = true
+one_way_collision_margin = 0.0
