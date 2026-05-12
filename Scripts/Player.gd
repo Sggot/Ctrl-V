@@ -11,7 +11,7 @@ export var hp = 100
 export var attack_damage = 10
 export var attack_cooldown = 0.5
 
-
+#fgjjgfgjgh
 # ---- Señales ----
 signal hp_changed(new_hp)
 signal player_died
