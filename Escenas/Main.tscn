@@ -1,10 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Personajes/P2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Personajes/Kirby.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fondos/Gemini_Generated_Image_1j1l391j1l391j1l.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=4]
-[ext_resource path="res://Escenas/PantallaVictoria.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sprites/Gemini_Generated_Image_oxwhbioxwhbioxwh.png" type="Texture" id=5]
 [ext_resource path="res://Escenas/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sprites/Barra de vida/barra-1.png.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/Barra de vida/barra-7.png.png" type="Texture" id=8]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Assets/Sprites/Barra de vida/barra-6.png.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Sprites/Barra de vida/barra-2.png.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites/Barra de vida/barra-11.png.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Gemini_Generated_Image_gbpb4gbpb4gbpb4g.png" type="Texture" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -68,9 +69,6 @@ scale = Vector2( 8.53125, 4.88672 )
 frames = SubResource( 1 )
 animation = "New Anim"
 
-[node name="PantallaVictoria" parent="." instance=ExtResource( 5 )]
-visible = false
-
 [node name="pared" type="Node2D" parent="."]
 position = Vector2( -349, -246 )
 
@@ -102,3 +100,21 @@ scale = Vector2( 5.248, 4.51497 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GeminiGeneratedImage1J1L391J1L391J1l/StaticBody2D"]
 position = Vector2( 146.551, -155.175 )
 shape = SubResource( 3 )
+
+[node name="PantallaVictoria" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="win" type="Sprite" parent="PantallaVictoria"]
+position = Vector2( 19.0001, -32 )
+scale = Vector2( 1.44529, 0.635417 )
+z_index = 2
+texture = ExtResource( 5 )
+
+[node name="lose" type="Sprite" parent="PantallaVictoria"]
+position = Vector2( 37.5, -43.366 )
+scale = Vector2( 0.985085, 0.972307 )
+z_index = 2
+texture = ExtResource( 18 )
+
+[node name="enseñe" type="Sprite" parent="PantallaVictoria/lose"]
