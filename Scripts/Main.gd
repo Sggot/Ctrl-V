@@ -30,27 +30,27 @@ func _on_p1_hp_changed(new_hp):
 	#mi codigo por si corrompe todo :v
 	match new_hp:
 		
-		100:$HUD/BarraP1.frame=1
+		100:$HUD/Vidav.frame=1
 		
-		90:$HUD/BarraP1.frame=2
+		90:$HUD/Vidav.frame=2
 		
-		80:$HUD/BarraP1.frame=3
+		80:$HUD/Vidav.frame=3
 		
-		70:$HUD/BarraP1.frame=4
+		70:$HUD/Vidav.frame=4
 		
-		60:$HUD/BarraP1.frame=5
+		60:$HUD/Vidav.frame=5
 		
-		50:$HUD/BarraP1.frame=6
+		50:$HUD/Vidav.frame=6
 		
-		40:$HUD/BarraP1.frame=7
+		40:$HUD/Vidav.frame=7
 		
-		30:$HUD/BarraP1.frame=8
+		30:$HUD/Vidav.frame=8
 		
-		20:$HUD/BarraP1.frame=9
+		20:$HUD/Vidav.frame=9
 		
-		10:$HUD/BarraP1.frame=10
+		10:$HUD/Vidav.frame=10
 		
-		0:$HUD/BarraP1.frame=11
+		0:$HUD/Vidav.frame=11
 		
 		
 
@@ -62,27 +62,27 @@ func _on_p2_hp_changed(new_hp):
 #daquem lol causas
 	match new_hp:
 		
-		100:$HUD/BarraP2.frame=1
+		100:$HUD/Vidavp2.frame=1
 		
-		90:$HUD/BarraP2.frame=2
+		90:$HUD/Vidavp2.frame=2
 		
-		80:$HUD/BarraP2.frame=3
+		80:$HUD/Vidavp2.frame=3
 		
-		70:$HUD/BarraP2.frame=4
+		70:$HUD/Vidavp2.frame=4
 		
-		60:$HUD/BarraP2.frame=5
+		60:$HUD/Vidavp2.frame=5
 		
-		50:$HUD/BarraP2.frame=6
+		50:$HUD/Vidavp2.frame=6
 		
-		40:$HUD/BarraP2.frame=7
+		40:$HUD/Vidavp2.frame=7
 		
-		30:$HUD/BarraP2.frame=8
+		30:$HUD/Vidavp2.frame=8
 		
-		20:$HUD/BarraP2.frame=9
+		20:$HUD/Vidavp2.frame=9
 		
-		10:$HUD/BarraP2.frame=10
+		10:$HUD/Vidavp2.frame=10
 		
-		0:$HUD/BarraP2.frame=11
+		0:$HUD/Vidavp2.frame=11
 		
 		
 func _on_p1_died():
