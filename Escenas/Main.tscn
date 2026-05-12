@@ -80,8 +80,9 @@ frames = SubResource( 1 )
 animation = "New Anim"
 
 [node name="Vidavp2" type="AnimatedSprite" parent="HUD"]
-position = Vector2( 1117.5, 68.3125 )
-scale = Vector2( 8.34375, 4.91797 )
+position = Vector2( 1118, 8 )
+rotation = -3.14159
+scale = Vector2( 8.53125, 4.88672 )
 frames = SubResource( 1 )
 animation = "New Anim"
 
