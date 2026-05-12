@@ -14,13 +14,6 @@ func _ready():
 	barra_p2.max_value = 100
 	barra_p2.value = 100
 
-#mi codigo por si corrompe todo :v
-func barradevida():
-	
-match barra_p1:
-	
-	100: barra-1.png.png
-	
 	# Ocultar pantalla de victoria al inicio
 	pantalla_victoria.visible = false
 
@@ -34,10 +27,62 @@ match barra_p1:
 
 func _on_p1_hp_changed(new_hp):
 	barra_p1.value = new_hp
+	#mi codigo por si corrompe todo :v
+	match new_hp:
+		
+		100:$HUD/BarraP1.frame=1
+		
+		90:$HUD/BarraP1.frame=2
+		
+		80:$HUD/BarraP1.frame=3
+		
+		70:$HUD/BarraP1.frame=4
+		
+		60:$HUD/BarraP1.frame=5
+		
+		50:$HUD/BarraP1.frame=6
+		
+		40:$HUD/BarraP1.frame=7
+		
+		30:$HUD/BarraP1.frame=8
+		
+		20:$HUD/BarraP1.frame=9
+		
+		10:$HUD/BarraP1.frame=10
+		
+		0:$HUD/BarraP1.frame=11
+		
+		
 
 func _on_p2_hp_changed(new_hp):
 	barra_p2.value = new_hp
 
+#mi codigo por si corrompe todo :v
+	match new_hp:
+		
+		100:$HUD/BarraP2.frame=1
+		
+		90:$HUD/BarraP2.frame=2
+		
+		80:$HUD/BarraP2.frame=3
+		
+		70:$HUD/BarraP2.frame=4
+		
+		60:$HUD/BarraP2.frame=5
+		
+		50:$HUD/BarraP2.frame=6
+		
+		40:$HUD/BarraP2.frame=7
+		
+		30:$HUD/BarraP2.frame=8
+		
+		20:$HUD/BarraP2.frame=9
+		
+		10:$HUD/BarraP2.frame=10
+		
+		0:$HUD/BarraP2.frame=11
+		
+		
 func _on_p1_died():
 	mostrar_victoria("P2 Win")
 
@@ -52,3 +97,8 @@ func mostrar_victoria(texto):
 func _input(event):
 	if pantalla_victoria.visible and event.is_pressed():
 		get_tree().reload_current_scene()
+		
+
+	
+	
+	
