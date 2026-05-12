@@ -14,6 +14,13 @@ func _ready():
 	barra_p2.max_value = 100
 	barra_p2.value = 100
 
+#mi codigo por si corrompe todo :v
+func barradevida():
+	
+match barra_p1:
+	
+	100: barra-1.png.png
+	
 	# Ocultar pantalla de victoria al inicio
 	pantalla_victoria.visible = false
 
