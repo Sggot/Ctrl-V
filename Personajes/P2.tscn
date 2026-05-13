@@ -74,7 +74,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 48.125, 44.375 )
+extents = Vector2( 51.0625, 48.6875 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 100, 26.5 )
@@ -87,13 +87,13 @@ script = ExtResource( 6 )
 player_id = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 832, 319 )
-scale = Vector2( 3.69345, 3.23335 )
+position = Vector2( 828.048, 323.633 )
+scale = Vector2( 3.94048, 3.52293 )
 frames = SubResource( 1 )
 animation = "IdleL"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 837, 321 )
+position = Vector2( 839.938, 327.688 )
 shape = SubResource( 2 )
 
 [node name="Hitbox" type="Area2D" parent="."]

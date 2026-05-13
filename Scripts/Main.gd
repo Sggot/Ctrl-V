@@ -67,5 +67,6 @@ func mostrar_victoria(ganador):
 		sprite_lose.visible = true
 
 func _input(event):
-	if pantalla_victoria.visible and event.is_pressed():
-		get_tree().reload_current_scene()
+	if pantalla_victoria.visible and event is InputEventKey:
+		if event.pressed and event.scancode == KEY_R:
+			get_tree().reload_current_scene()
