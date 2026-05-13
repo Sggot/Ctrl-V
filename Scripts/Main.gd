@@ -24,17 +24,17 @@ func _ready():
 func _on_p1_hp_changed(new_hp):
 	barra_p1.value = new_hp
 	match new_hp:
-		100: $HUD/Vidav.frame = 1
-		90:  $HUD/Vidav.frame = 2
-		80:  $HUD/Vidav.frame = 3
-		70:  $HUD/Vidav.frame = 4
-		60:  $HUD/Vidav.frame = 5
-		50:  $HUD/Vidav.frame = 6
-		40:  $HUD/Vidav.frame = 7
-		30:  $HUD/Vidav.frame = 8
-		20:  $HUD/Vidav.frame = 9
-		10:  $HUD/Vidav.frame = 10
-		0:   $HUD/Vidav.frame = 11
+		100: $HUD/Vidav.frame = 0
+		90:  $HUD/Vidav.frame = 1
+		80:  $HUD/Vidav.frame = 2
+		70:  $HUD/Vidav.frame = 3
+		60:  $HUD/Vidav.frame = 4
+		50:  $HUD/Vidav.frame = 5
+		40:  $HUD/Vidav.frame = 6
+		30:  $HUD/Vidav.frame = 7
+		20:  $HUD/Vidav.frame = 8
+		10:  $HUD/Vidav.frame = 9
+		0:   $HUD/Vidav.frame = 10
 
 func _on_p2_hp_changed(new_hp):
 	barra_p2.value = new_hp
