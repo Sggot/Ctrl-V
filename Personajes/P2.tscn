@@ -77,17 +77,17 @@ animations = [ {
 extents = Vector2( 48.125, 44.375 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 56.5, 15 )
+extents = Vector2( 100, 26.5 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 32, 11 )
+extents = Vector2( 80, 29.5 )
 
 [node name="P2" type="KinematicBody2D"]
 script = ExtResource( 6 )
 player_id = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 824, 341 )
+position = Vector2( 832, 319 )
 scale = Vector2( 3.69345, 3.23335 )
 frames = SubResource( 1 )
 animation = "IdleL"
@@ -99,12 +99,12 @@ shape = SubResource( 2 )
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 923.5, 339 )
+position = Vector2( 967, 327.5 )
 shape = SubResource( 5 )
 disabled = true
 
 [node name="CollisionShape2D1" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 744, 347 )
+position = Vector2( 717, 329 )
 shape = SubResource( 6 )
 
 [node name="CooldownTimer" type="Timer" parent="."]

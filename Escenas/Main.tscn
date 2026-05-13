@@ -33,7 +33,7 @@ animations = [ {
 } ]
 
 [sub_resource type="SegmentShape2D" id=2]
-a = Vector2( -4, 216 )
+a = Vector2( -5, 569 )
 b = Vector2( -3, -236 )
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -43,7 +43,8 @@ extents = Vector2( 137.404, 12.3013 )
 position = Vector2( 622, 387 )
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_horizontal_guides_": [ -232.0 ]
+"_edit_horizontal_guides_": [ -232.0 ],
+"_edit_vertical_guides_": [ -321.0 ]
 }
 
 [node name="P1" parent="." instance=ExtResource( 2 )]
@@ -51,7 +52,7 @@ position = Vector2( -21, -125 )
 z_index = 1
 
 [node name="P2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -502, -573 )
+position = Vector2( -501, -519 )
 z_index = 1
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
@@ -76,19 +77,20 @@ position = Vector2( -349, -246 )
 position = Vector2( -244, 107 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pared/StaticBody2D"]
-position = Vector2( -26, 3 )
+position = Vector2( -26, -14 )
 shape = SubResource( 2 )
 one_way_collision_margin = 0.0
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="pared"]
-position = Vector2( -244, 107 )
+position = Vector2( -239, 126 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pared/StaticBody2D2"]
-position = Vector2( 1254, 9 )
+position = Vector2( 1259, -58 )
 shape = SubResource( 2 )
 one_way_collision_margin = 0.0
 
 [node name="GeminiGeneratedImage1J1L391J1L391J1l" type="Sprite" parent="."]
+visible = false
 position = Vector2( 23, -30.5 )
 scale = Vector2( 0.911111, 1.02361 )
 texture = ExtResource( 3 )
@@ -106,12 +108,14 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="win" type="Sprite" parent="PantallaVictoria"]
+visible = false
 position = Vector2( 19.0001, -32 )
 scale = Vector2( 1.44529, 0.635417 )
 z_index = 2
 texture = ExtResource( 5 )
 
 [node name="lose" type="Sprite" parent="PantallaVictoria"]
+visible = false
 position = Vector2( 37.5, -43.366 )
 scale = Vector2( 0.985085, 0.972307 )
 z_index = 2
