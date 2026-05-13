@@ -39,17 +39,17 @@ func _on_p1_hp_changed(new_hp):
 func _on_p2_hp_changed(new_hp):
 	barra_p2.value = new_hp
 	match new_hp:
-		100: $HUD/Vidavp2.frame = 1
-		90:  $HUD/Vidavp2.frame = 2
-		80:  $HUD/Vidavp2.frame = 3
-		70:  $HUD/Vidavp2.frame = 4
-		60:  $HUD/Vidavp2.frame = 5
-		50:  $HUD/Vidavp2.frame = 6
-		40:  $HUD/Vidavp2.frame = 7
-		30:  $HUD/Vidavp2.frame = 8
-		20:  $HUD/Vidavp2.frame = 9
-		10:  $HUD/Vidavp2.frame = 10
-		0:   $HUD/Vidavp2.frame = 11
+		100: $HUD/Vidavp2.frame = 0
+		90:  $HUD/Vidavp2.frame = 1
+		80:  $HUD/Vidavp2.frame = 2
+		70:  $HUD/Vidavp2.frame = 3
+		60:  $HUD/Vidavp2.frame = 4
+		50:  $HUD/Vidavp2.frame = 5
+		40:  $HUD/Vidavp2.frame = 6
+		30:  $HUD/Vidavp2.frame = 7
+		20:  $HUD/Vidavp2.frame = 8
+		10:  $HUD/Vidavp2.frame = 9
+		0:   $HUD/Vidavp2.frame = 10
 
 func _on_p1_died():
 	mostrar_victoria(2)
